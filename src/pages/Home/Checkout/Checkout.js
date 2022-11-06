@@ -27,21 +27,22 @@ const Checkout = () => {
 
 
         fetch("http://localhost:5000/orders", {
-            method: 'POST',
-            headers: {
-                'content-type' : 'application/json'
-            },
-            body: JSON.stringify(order)
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+            authorization: `Bearer ${localStorage.getItem("genius-token")}`,
+          },
+          body: JSON.stringify(order),
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data)
-            if(data.acknowledged){
-                alert('Order placed successfully')
-                form.reset();
+          .then((res) => res.json())
+          .then((data) => {
+            console.log(data);
+            if (data.acknowledged) {
+              alert("Order placed successfully");
+              form.reset();
             }
-        })
-        .catch(error => console.error(error))
+          })
+          .catch((error) => console.error(error));
 
     }
 
