@@ -29,7 +29,7 @@ const Login = () => {
             console.log(currentUser);
 
             //get jwt token
-            fetch("http://localhost:5000/jwt", {
+            fetch("https://genius-car-server-ifty17.vercel.app/jwt", {
               method: 'POST',
               headers: {
                 'content-type' : 'application/json'
@@ -84,9 +84,7 @@ const Login = () => {
                 required
               />
               <label className="label">
-                <a href="#" className="label-text-alt link link-hover">
-                  Forgot password?
-                </a>
+                
               </label>
             </div>
             <div className="form-control mt-6">

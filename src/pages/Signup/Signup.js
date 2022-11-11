@@ -13,6 +13,7 @@ const Signup = () => {
       const email = form.email.value;
       const password = form.password.value;
       const name = form.name.value;
+      
 
       createUser(email, password)
       .then(user => {
